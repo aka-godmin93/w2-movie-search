@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 const movieTitle = image.getAttribute("alt");
                 const movieId = image.getAttribute("data-movieId");
                 alert(`
-                Movie Title : ${movieTitle}
-                Movie ID : ${movieId}`);
+Movie Title : ${movieTitle}
+Movie ID : ${movieId}`);
             });
         });
     }
