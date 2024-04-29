@@ -34,8 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const 이미지클릭 = document.querySelectorAll(".mvcCard img");
         이미지클릭.forEach(function (image) {
             image.addEventListener("click", function () {
+                const movieTitle = image.getAttribute("alt");
                 const movieId = image.getAttribute("data-movieId");
-                alert(`Movie ID: ${movieId}`);
+                alert(`
+                Movie Title : ${movieTitle}
+                Movie ID : ${movieId}`);
             });
         });
     }
@@ -50,6 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const 검색어 = 검색창.value.toLowerCase();
         if (검색어 !== "") {
             fetchTMDB(`https://api.themoviedb.org/3/search/movie?query=${검색어}&api_key=de30b78e5d14a77a302cb1aa2c0ceb6b`);
+        } else {
+            alert("Enter your search term");
         }
     }
 
