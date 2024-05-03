@@ -187,7 +187,6 @@
       .submitBox input[type="submit"]:hover {
         background-color: #eaca07af;
       }
-
       /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 리뷰 예시 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
       .reviewBox {
         margin-bottom: 10px;
@@ -273,6 +272,31 @@
           <input type="text" id="cmtPw" placeholder="Password" />
           <input type="submit" value="Submit" />
         </div>
+        </div>
+        <div id="movieInfo">
+          <h2 id="movieTitle"></h2>
+          <p id="movieOverview"></p>
+          <p id="movieScore"></p>
+        </div>
+      </div>
+      <br /><br /><br />
+
+      <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 하단 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+      <h3 style="margin-left: 7px">Reviews</h3>
+      <div class="divider"></div>
+      <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ리뷰 입력 폼 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+      <div class="commentBox">
+        <textarea id="reviewContent" placeholder="Write your comment..."></textarea>
+        <div class="submitBox">
+            <input type="id" id="cmtId" placeholder="Your Name" />
+            <input type="password" id="cmtPw" placeholder="Password" />
+            <button onclick="submitReview()">Submit</button>
+        </div>
+    </div>
+<!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ리뷰 목록ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+  <div id="reviews"></div>
+
+  <script src="mvdt.js"></script>
       </div>
     </div>
   </body>
