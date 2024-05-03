@@ -1,183 +1,279 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>Movie Details</title>
-        <link rel="stylesheet" href="style.css" />
-        <script src="mvdt.js"></script>
-        <style>
-            /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 레이아웃 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
-            #detailsBox {
-                display: inline-flex;
-                margin-top: 10px;
-            }
+  <head>
+    <meta charset="UTF-8" />
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="mvdt.js"></script>
+    <style>
+      /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 레이아웃 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+      #detailsBox {
+        display: inline-flex;
+        margin-top: 10px;
+      }
 
-            #posterBox {
-                margin-right: 20px;
-            }
+      #posterBox {
+        margin-right: 20px;
+      }
 
-            #posterImage {
-                width: 350px;
-                height: auto;
-                border: 1px solid #757575;
-                border-radius: 8px;
-                box-shadow: 0 2px 4px #181818;
-            }
+      #posterImage {
+        width: 350px;
+        height: auto;
+        border: 1px solid #757575;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px #181818;
+      }
 
-            #movieInfo {
-                text-align: left;
-                margin-left: 10px;
-            }
+      #movieInfo {
+        text-align: left;
+        margin-left: 10px;
+      }
 
-            #movieTitle {
-                font-size: 32px;
-                font-weight: bold;
-                margin: 10px 0 25px 0;
-                color: #eaca07;
-                text-shadow: 1px 2px 3px #121212;
-            }
+      #movieTitle {
+        font-size: 32px;
+        font-weight: bold;
+        margin: 10px 0 25px 0;
+        color: #eaca07;
+        text-shadow: 1px 2px 3px #121212;
+      }
 
-            #movieOverview {
-                margin-bottom: 25px;
-                margin-left: 5px;
-                text-shadow: 1px 2px 3px #121212;
-            }
+      #movieOverview {
+        margin-bottom: 25px;
+        margin-left: 5px;
+        text-shadow: 1px 2px 3px #121212;
+      }
 
-            #movieScore {
-                font-size: 16px;
-                color: #eaca07;
-                text-shadow: 1px 2px 3px #121212;
-                margin-left: 5px;
-            }
+      #movieScore {
+        font-size: 16px;
+        color: #eaca07;
+        text-shadow: 1px 2px 3px #121212;
+        margin-left: 5px;
+      }
 
-            .divider {
-                width: 98%;
-                height: 1px;
-                background-color: #f7f7f7;
-                box-shadow: 0 2px 4px #eaca07;
-                margin: 0 auto 25px auto;
-            }
+      .divider {
+        width: 98%;
+        height: 1px;
+        background-color: #f7f7f7;
+        box-shadow: 0 2px 4px #eaca07;
+        margin: 0 auto 25px auto;
+      }
+      /*----------------------------------- //등장인물 *------------------------------------*/
+      .actorBox {
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-top: 20px;
+        overflow: auto;
+        height: inherit;
+      }
 
-            /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 리뷰 등록 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
-            .commentBox {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-end;
-                margin-top: 20px;
-                padding: 20px;
-                background-color: #333333;
-                border-radius: 8px;
-            }
+      .actCard {
+        width: 140px;
+        border: 1px solid #cccccc;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px #181818;
+        background-color: #444444;
+        color: #f7f7f7;
+        margin: 10px;
+      }
+      .imgBox {
+        width: 140px;
+        height: 210px;
+      }
+      .actCard img {
+        width: 140px;
+        object-fit: cover;
+      }
 
-            .commentBox textarea {
-                width: 98.5%;
-                height: 80px;
-                padding: 10px;
-                margin-bottom: 10px;
-                border: 1px solid #757575;
-                border-radius: 4px;
-                background-color: #454545;
-                color: #f7f7f7;
-                resize: none;
-                align-self: flex-end;
-            }
+      .actInfo {
+        padding: 5px;
+        margin-left: 5px;
+      }
 
-            .submitBox {
-                display: flex;
-                justify-content: flex-end;
-            }
+      .actName {
+        font-weight: bold;
+        margin-top: 0px;
+        margin-bottom: 10px;
+      }
 
-            .submitBox input[type="text"] {
-                width: 30%;
-                padding: 10px;
-                border: 1px solid #757575;
-                border-radius: 4px;
-                background-color: #454545;
-                color: #f7f7f7;
-                margin-right: 5px;
-            }
+      .actCharacter {
+        margin-bottom: 3px;
+      }
 
-            .submitBox input[type="submit"] {
-                padding: 10px 20px;
-                border: none;
-                border-radius: 4px;
-                background-color: #eaca07e2;
-                cursor: pointer;
-                color: #f7f7f7;
-            }
+      /*----------------------------------- //감독 *------------------------------------*/
+      .directorBox {
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-top: 20px;
+        overflow: auto;
+        height: inherit;
+      }
 
-            .submitBox input[type="submit"]:hover {
-                background-color: #eaca07af;
-            }
+      .drcCard {
+        width: 140px;
+        border: 1px solid #cccccc;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px #181818;
+        background-color: #444444;
+        color: #f7f7f7;
+        margin: 10px;
+      }
 
-            /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 리뷰 예시 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
-            .reviewBox {
-                margin-bottom: 10px;
-                margin-left: 10px;
-            }
+      .drcCard img {
+        width: 140px;
+        object-fit: cover;
+      }
 
-            .reviews {
-                margin-bottom: 20px;
-            }
+      .drcInfo {
+        padding: 5px;
+        margin-left: 5px;
+      }
 
-            .reviewer {
-                font-weight: bold;
-                color: #eaca07;
-                font-size: 13px;
-            }
+      .drcName {
+        font-weight: bold;
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
 
-            .reviewTxt {
-                margin-right: 20px;
-                padding: 10px;
-                border-radius: 4px;
-                color: #f7f7f7;
-                background-color: #454545;
-                font-size: 16px;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="totalBox">
-            <h1 style="margin-bottom: 20px">Movie Details</h1>
-            <div class="divider"></div>
-            <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 영화 상세 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
-            <div id="detailsBox">
-                <div id="posterBox">
-                    <img id="posterImage" src="" alt="Movie Poster" />
-                </div>
-                <div id="movieInfo">
-                    <h2 id="movieTitle"></h2>
-                    <p id="movieOverview"></p>
-                    <p id="movieScore"></p>
-                </div>
-            </div>
-            <br /><br /><br />
+      /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 리뷰 등록 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+      .commentBox {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #333333;
+        border-radius: 8px;
+      }
 
-            <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 하단 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
-            <h3 style="margin-left: 7px">Reviews</h3>
-            <div class="divider"></div>
+      .commentBox textarea {
+        width: 98.5%;
+        height: 80px;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #757575;
+        border-radius: 4px;
+        background-color: #454545;
+        color: #f7f7f7;
+        resize: none;
+        align-self: flex-end;
+      }
 
-            <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 리뷰 예시 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
-            <div class="reviewBox">
-                <div class="reviews">
-                    <div class="reviewer">Review by Min-Soo Kim</div>
-                    <div class="reviewTxt">It's amazing!</div>
-                </div>
-                <div class="reviews">
-                    <div class="reviewer">Review by Chul-Soo Pack</div>
-                    <div class="reviewTxt">My favorite movie!</div>
-                </div>
-            </div>
+      .submitBox {
+        display: flex;
+        justify-content: flex-end;
+      }
 
-            <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 리뷰 입력 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
-            <div class="commentBox">
-                <textarea placeholder="Write your comment..."></textarea>
-                <div class="submitBox">
-                    <input type="text" id="cmtId" placeholder="Your Name" />
-                    <input type="text" id="cmtPw" placeholder="Password" />
-                    <input type="submit" value="Submit" />
-                </div>
-            </div>
+      .submitBox input[type="text"] {
+        width: 30%;
+        padding: 10px;
+        border: 1px solid #757575;
+        border-radius: 4px;
+        background-color: #454545;
+        color: #f7f7f7;
+        margin-right: 5px;
+      }
+
+      .submitBox input[type="submit"] {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: #eaca07e2;
+        cursor: pointer;
+        color: #f7f7f7;
+      }
+
+      .submitBox input[type="submit"]:hover {
+        background-color: #eaca07af;
+      }
+
+      /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 리뷰 예시 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+      .reviewBox {
+        margin-bottom: 10px;
+        margin-left: 10px;
+      }
+
+      .reviews {
+        margin-bottom: 20px;
+      }
+
+      .reviewer {
+        font-weight: bold;
+        color: #eaca07;
+        font-size: 13px;
+      }
+
+      .reviewTxt {
+        margin-right: 20px;
+        padding: 10px;
+        border-radius: 4px;
+        color: #f7f7f7;
+        background-color: #454545;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="totalBox">
+      <h1 style="margin-bottom: 20px">Movie Details</h1>
+      <div class="divider"></div>
+      <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 영화 상세 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+      <div id="detailsBox">
+        <div id="posterBox">
+          <img id="posterImage" src="" alt="Movie Poster" />
         </div>
-    </body>
+        <div id="movieInfo">
+          <h2 id="movieTitle"></h2>
+          <p id="movieOverview"></p>
+          <p id="movieScore"></p>
+        </div>
+      </div>
+      <br /><br /><br />
+
+      <!-- ------------------------------등장인물 불러오기 ------------------------------------>
+      <div
+        id="actorCard"
+        class="actorBox"
+        style="overflow-x: scroll; width: 800px; height: 350px"
+      >
+        <div class="actCard"></div>
+      </div>
+
+      <!-- ------------------------------감독 불러오기 ------------------------------------>
+      <div
+        id="directorCard"
+        class="directorBox"
+        style="overflow: hidden; width: 800px; height: 300px"
+      >
+        <div class="drcCard"></div>
+      </div>
+
+      <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 하단 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+      <h3 style="margin-left: 7px">Reviews</h3>
+      <div class="divider"></div>
+
+      <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 리뷰 예시 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+      <div class="reviewBox">
+        <div class="reviews">
+          <div class="reviewer">Review by Min-Soo Kim</div>
+          <div class="reviewTxt">It's amazing!</div>
+        </div>
+        <div class="reviews">
+          <div class="reviewer">Review by Chul-Soo Pack</div>
+          <div class="reviewTxt">My favorite movie!</div>
+        </div>
+      </div>
+
+      <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 리뷰 입력 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+      <div class="commentBox">
+        <textarea placeholder="Write your comment..."></textarea>
+        <div class="submitBox">
+          <input type="text" id="cmtId" placeholder="Your Name" />
+          <input type="text" id="cmtPw" placeholder="Password" />
+          <input type="submit" value="Submit" />
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
