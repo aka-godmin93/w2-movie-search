@@ -57,6 +57,84 @@
         box-shadow: 0 2px 4px #eaca07;
         margin: 0 auto 25px auto;
       }
+      /*----------------------------------- //등장인물 *------------------------------------*/
+      .actorBox {
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-top: 20px;
+        overflow: auto;
+        height: inherit;
+      }
+
+      .actCard {
+        width: 140px;
+        border: 1px solid #cccccc;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px #181818;
+        background-color: #444444;
+        color: #f7f7f7;
+        margin: 10px;
+      }
+      .imgBox {
+        width: 140px;
+        height: 210px;
+      }
+      .actCard img {
+        width: 140px;
+        object-fit: cover;
+      }
+
+      .actInfo {
+        padding: 5px;
+        margin-left: 5px;
+      }
+
+      .actName {
+        font-weight: bold;
+        margin-top: 0px;
+        margin-bottom: 10px;
+      }
+
+      .actCharacter {
+        margin-bottom: 3px;
+      }
+
+      /*----------------------------------- //감독 *------------------------------------*/
+      .directorBox {
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-top: 20px;
+        overflow: auto;
+        height: inherit;
+      }
+
+      .drcCard {
+        width: 140px;
+        border: 1px solid #cccccc;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px #181818;
+        background-color: #444444;
+        color: #f7f7f7;
+        margin: 10px;
+      }
+
+      .drcCard img {
+        width: 140px;
+        object-fit: cover;
+      }
+
+      .drcInfo {
+        padding: 5px;
+        margin-left: 5px;
+      }
+
+      .drcName {
+        font-weight: bold;
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
 
       /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 리뷰 등록 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
       .commentBox {
@@ -143,6 +221,57 @@
       <div id="detailsBox">
         <div id="posterBox">
           <img id="posterImage" src="" alt="Movie Poster" />
+        </div>
+        <div id="movieInfo">
+          <h2 id="movieTitle"></h2>
+          <p id="movieOverview"></p>
+          <p id="movieScore"></p>
+        </div>
+      </div>
+      <br /><br /><br />
+
+      <!-- ------------------------------등장인물 불러오기 ------------------------------------>
+      <div
+        id="actorCard"
+        class="actorBox"
+        style="overflow-x: scroll; width: 800px; height: 350px"
+      >
+        <div class="actCard"></div>
+      </div>
+
+      <!-- ------------------------------감독 불러오기 ------------------------------------>
+      <div
+        id="directorCard"
+        class="directorBox"
+        style="overflow: hidden; width: 800px; height: 300px"
+      >
+        <div class="drcCard"></div>
+      </div>
+
+      <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 하단 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+      <h3 style="margin-left: 7px">Reviews</h3>
+      <div class="divider"></div>
+
+      <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 리뷰 예시 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+      <div class="reviewBox">
+        <div class="reviews">
+          <div class="reviewer">Review by Min-Soo Kim</div>
+          <div class="reviewTxt">It's amazing!</div>
+        </div>
+        <div class="reviews">
+          <div class="reviewer">Review by Chul-Soo Pack</div>
+          <div class="reviewTxt">My favorite movie!</div>
+        </div>
+      </div>
+
+      <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 리뷰 입력 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+      <div class="commentBox">
+        <textarea placeholder="Write your comment..."></textarea>
+        <div class="submitBox">
+          <input type="text" id="cmtId" placeholder="Your Name" />
+          <input type="text" id="cmtPw" placeholder="Password" />
+          <input type="submit" value="Submit" />
+        </div>
         </div>
         <div id="movieInfo">
           <h2 id="movieTitle"></h2>
