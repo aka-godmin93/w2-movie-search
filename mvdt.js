@@ -28,8 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
     options
   )
     .then((response) => response.json())
-    .then((data) => makeActor(data.cast))
+    .then((data) => makeCard(data))
     .catch((err) => console.error(err));
+
+  function makeCard(data) {
+    makeActor(data.cast);
+    makeDirector(data.crew);
+  }
 
   //----------------------등장인물 정보 넣기----------------------------
 
@@ -59,14 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //----------------------감독 정보 넣기----------------------------
-
-  fetch(
-    `https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US`,
-    options
-  )
-    .then((response) => response.json())
-    .then((data) => makeDirector(data.crew))
-    .catch((err) => console.error(err));
 
   function makeDirector(crews) {
     const directorCard = document.querySelector("#directorCard");
