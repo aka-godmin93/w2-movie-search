@@ -159,6 +159,17 @@ function resetForm() {
   document.getElementById("reviewContent").value = "";
   document.getElementById("cmtPw").value = "";
 }
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 페이지 로드 시 이전에 작성된 리뷰부분를 표시 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
+//displayReviews();
+displayControl("reviewPart");
 
-// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 페이지 로드 시 이전에 작성된 리뷰를 표시 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
-displayReviews();
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 리뷰 및 출연진 표시버튼 js ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
+function displayControl(str) {
+  if (str === "reviewPart") {
+    document.getElementById("actorPart").style = "display:none";
+    document.getElementById("reviewPart").style = "";
+  } else if (str === "actorPart") {
+    document.getElementById("actorPart").style = "";
+    document.getElementById("reviewPart").style = "display:none";
+  }
+}
