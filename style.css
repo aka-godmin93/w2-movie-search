@@ -50,6 +50,16 @@ h1 {
     background-color: #eacc07af;
 }
 
+#sortBtn{
+    padding: 10px 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background-color: #eacc07e2;
+    cursor: pointer;
+    color: #f7f7f7;
+    
+}
+
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ  카드  ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 .movieBox {
     display: grid;
