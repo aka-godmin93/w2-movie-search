@@ -126,29 +126,64 @@ function displayReviews() {
 
 //ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ  리뷰 수정 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
 function editReview(id) {
-  const newReview = prompt("Enter your edited review:");
-  if (newReview === undefined || newReview === null || newReview.trim() === "")
+  const newPassword = prompt("Enter your password to edit the review:");
+  if (
+    newPassword === undefined ||
+    newPassword === null ||
+    newPassword.trim() === ""
+  )
     return;
 
   let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
   const index = reviews.findIndex((review) => review.id === id);
   if (index !== -1) {
-    reviews[index].review = newReview;
-    localStorage.setItem("reviews", JSON.stringify(reviews));
-    displayReviews();
+    // 입력한 비밀번호가 저장된 비밀번호와 일치하는지 확인
+    if (newPassword === reviews[index].password) {
+      const newReview = prompt("Enter your edited review:");
+      if (
+        newReview === undefined ||
+        newReview === null ||
+        newReview.trim() === ""
+      )
+        return;
+
+      reviews[index].review = newReview;
+      localStorage.setItem("reviews", JSON.stringify(reviews));
+      displayReviews();
+    } else {
+      alert("Incorrect password. You cannot edit this review.");
+    }
+  }
+}
+//ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ  리뷰 삭제 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
+function deleteReview(id) {
+  const newPassword = prompt("Enter your password to delete the review:");
+  if (
+    newPassword === undefined ||
+    newPassword === null ||
+    newPassword.trim() === ""
+  )
+    return;
+
+  let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+  const index = reviews.findIndex((review) => review.id === id);
+  if (index !== -1) {
+    // 입력한 비밀번호가 저장된 비밀번호와 일치하는지 확인
+    if (newPassword === reviews[index].password) {
+      const confirmDelete = confirm(
+        "Are you sure you want to delete this review?"
+      );
+      if (confirmDelete) {
+        reviews = reviews.filter((review) => review.id !== id);
+        localStorage.setItem("reviews", JSON.stringify(reviews));
+        displayReviews();
+      }
+    } else {
+      alert("Incorrect password. You cannot delete this review.");
+    }
   }
 }
 
-// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 리뷰 삭제 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
-function deleteReview(id) {
-  const confirmDelete = confirm("Are you sure you want to delete this review?");
-  if (!confirmDelete) return;
-
-  let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-  reviews = reviews.filter((review) => review.id !== id);
-  localStorage.setItem("reviews", JSON.stringify(reviews));
-  displayReviews();
-}
 // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 입력폼 초기화 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
 function resetForm() {
   document.getElementById("cmtId").value = "";
@@ -156,9 +191,9 @@ function resetForm() {
   document.getElementById("cmtPw").value = "";
 }
 // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 페이지 로드 시 이전에 작성된 리뷰부분를 표시 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
-//displayReviews();
-displayControl("reviewPart");
-
+document.addEventListener("DOMContentLoaded", () => {
+  displayReviews();
+});
 // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 리뷰 및 출연진 표시버튼 js ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
 function displayControl(str) {
   if (str === "reviewPart") {
