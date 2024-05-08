@@ -99,11 +99,4 @@ document.addEventListener("DOMContentLoaded", () => {
             else if (sortBy.value == "score")
                 fetchTMDB("https://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc&api_key=de30b78e5d14a77a302cb1aa2c0ceb6b&language=en-US");
     })
-  // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 엔터 검색 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
-  const searchText = document.querySelector("#searchText");
-  searchText.addEventListener("keydown", function (enter) {
-    if (enter.key === "Enter") {
-      movieSearch();
-    }
-  });
 });
