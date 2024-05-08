@@ -127,7 +127,8 @@ function displayReviews() {
 //ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ  리뷰 수정 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
 function editReview(id) {
   const newReview = prompt("Enter your edited review:");
-  if (newReview === null || newReview.trim() === "") return;
+  if (newReview === undefined || newReview === null || newReview.trim() === "")
+    return;
 
   let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
   const index = reviews.findIndex((review) => review.id === id);
