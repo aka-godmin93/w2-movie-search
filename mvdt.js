@@ -81,8 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div> `;
 
         directorCard.appendChild(cardBox);
-      } else {
-        cardBox.classList.add("drcCard");
       }
     });
   }
