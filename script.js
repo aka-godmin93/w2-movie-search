@@ -64,6 +64,33 @@ document.addEventListener("DOMContentLoaded", () => {
     "https://api.themoviedb.org/3/movie/top_rated?api_key=de30b78e5d14a77a302cb1aa2c0ceb6b&language=en-US"
   );
 
+  // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 영화 검색 함수 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
+  function movieSearch() {
+    const searchText = document
+      .querySelector("#searchText")
+      .value.toLowerCase();
+    if (searchText !== "") {
+      fetchTMDB(
+        `https://api.themoviedb.org/3/search/movie?query=${searchText}&api_key=de30b78e5d14a77a302cb1aa2c0ceb6b`
+      );
+    } else {
+      alert("Enter your search term");
+    }
+  }
+
+  // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 클릭 검색 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
+  const searchBtn = document.querySelector("#searchBtn");
+  searchBtn.addEventListener("click", function () {
+    movieSearch();
+  });
+  // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 엔터 검색 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
+  const searchText = document.querySelector("#searchText");
+  searchText.addEventListener("keydown", function (enter) {
+    if (enter.key === "Enter") {
+      movieSearch();
+    }
+  });
+
   // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 카드 정렬 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
   const sortBy = document.querySelector("#sortBtn");
   sortBy.addEventListener("change", function () {
@@ -76,29 +103,4 @@ document.addEventListener("DOMContentLoaded", () => {
         "https://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc&api_key=de30b78e5d14a77a302cb1aa2c0ceb6b&language=en-US"
       );
   });
-});
-
-// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 영화 검색 함수 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
-function movieSearch() {
-  const searchText = document.querySelector("#searchText").value.toLowerCase();
-  if (searchText !== "") {
-    fetchTMDB(
-      `https://api.themoviedb.org/3/search/movie?query=${searchText}&api_key=de30b78e5d14a77a302cb1aa2c0ceb6b`
-    );
-  } else {
-    alert("Enter your search term");
-  }
-}
-
-// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 클릭 검색 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
-const searchBtn = document.querySelector("#searchBtn");
-searchBtn.addEventListener("click", function () {
-  movieSearch();
-});
-// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 엔터 검색 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
-const searchText = document.querySelector("#searchText");
-searchText.addEventListener("keydown", function (enter) {
-  if (enter.key === "Enter") {
-    movieSearch();
-  }
 });
