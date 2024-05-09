@@ -1,134 +1,137 @@
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ  메인  ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #181818;
-  color: #f7f7f7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #181818;
+    color: #f7f7f7;
 }
 
 #totalBox {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 30px;
-  background-color: #333333;
-  border-radius: 8px;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #333333;
+    border-radius: 8px;
 }
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 타이틀 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 h1 {
-  font-size: 45px;
-  text-shadow: 1px 2px 3px #eacc07af;
-  text-align: center;
-  margin-bottom: 45px;
+    font-size: 45px;
+    text-shadow: 1px 2px 3px #eacc07af;
+    text-align: center;
+    margin-bottom: 45px;
 }
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 검색바 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 #searchBar {
-  text-align: center;
+    text-align: center;
 }
 
 #searchText {
-  width: 40%;
-  padding: 10px;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-  background-color: #454545;
-  color: #f7f7f7;
+    width: 40%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background-color: #454545;
+    color: #f7f7f7;
 }
 
 #searchBtn {
-  padding: 10px 20px;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-  background-color: #eacc07e2;
-  cursor: pointer;
-  color: #f7f7f7;
-}
-
-#searchBtn:hover {
-  background-color: #eacc07af;
-}
-
-#sortBtn{
-    padding: 10px 10px;
+    padding: 10px 20px;
     border: 1px solid #cccccc;
     border-radius: 4px;
     background-color: #eacc07e2;
     cursor: pointer;
     color: #f7f7f7;
-    
+}
+
+#searchBtn:hover {
+    background-color: #eacc07af;
+}
+
+#sortBtn {
+    padding: 10px 15px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background-color: #eacc07e2;
+    cursor: pointer;
+    color: #f7f7f7;
+}
+
+#sortBtn:hover {
+    background-color: #eacc07af;
 }
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ  카드  ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 .movieBox {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, auto));
-  grid-gap: 20px;
-  margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+    grid-gap: 20px;
+    margin-top: 20px;
 }
 
 .mvcCard {
-  border: 1px solid #cccccc;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px #181818;
-  background-color: #444444;
-  color: #f7f7f7;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px #181818;
+    background-color: #444444;
+    color: #f7f7f7;
 }
 
 .mvcCard img {
-  width: 100%;
-  height: auto;
-  cursor: pointer;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
 }
 
 .mvcInfo {
-  padding: 15px;
+    padding: 15px;
 }
 
 .mvcTitle {
-  font-weight: bold;
-  margin-bottom: 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .mvcOverview {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .mvcScore {
-  font-size: 14px;
-  color: #eaca07;
+    font-size: 14px;
+    color: #eaca07;
 }
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ  컨트롤 버튼  ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+.homeBtn {
+    padding: 5px 5px;
+    border: 1px solid #787878;
+    border-radius: 20px;
+    background-color: #eacc07e2;
+    cursor: pointer;
+    font-size: large;
+    color: #f7f7f7;
+}
+
 .btn {
-  --background: gray;
-  --text: #fff;
-  --font-size: 16px;
-  --duration: 0.5s;
-  --move-hover: -4px;
-  --shadow: 0 2px 8px -1px rgba(39, 94, 254, 0.32);
-  --shadow-hover: 0 4px 20px -2px rgba(39, 94, 254, 0.5);
-  padding: 16px 32px;
-  font-family: "Roboto";
-  font-weight: 500;
-  line-height: var(--font-size);
-  border-radius: 24px;
-  display: inline-block;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: var(--font-size);
-  letter-spacing: 0.5px;
-  background: var(--background);
-  color: var(--text);
-  box-shadow: var(--shadow);
-  transform: translateY(var(--y));
-  transition: transform var(--duration) ease, box-shadow var(--duration) ease;
-  -webkit-tap-highlight-color: transparent;
+    margin: 20px 10px 13px 10px;
+    padding: 7px 10px;
+    width: 200px;
+    border: 0px solid #787878;
+    border-radius: 4px;
+    background-color: #333333;
+    cursor: pointer;
+    font: bolder;
+    font-size: 25px;
+    text-shadow: 1px 2px 3px #eacc07af;
+    color: #f7f7f7;
+}
+
+.btn:hover {
+    background-color: #181818;
 }
 
 .controlBtn {
-  text-align: center;
+    text-align: center;
 }

@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Best Movie</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <div id="totalBox">
-      <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 홈버튼 추가 start ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
-      <button class="btn" onclick="window.location.reload();" style="float:right">HOME</button>
-      <br> 
-      <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 홈버튼 추가 end ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
-      <h1>Best Movie</h1>
-      <div id="searchBar">
-        <input type="text" id="searchText" placeholder="Search for movies..." />
-        <input type="button" id="searchBtn" value="Search" />
+    <head>
+        <meta charset="UTF-8" />
+        <title>Best Movie</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div id="totalBox">
+            <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 홈버튼 추가 start ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+            <button class="homeBtn" onclick="window.location.reload();" style="float: right">🔝</button>
+            <br />
+            <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 홈버튼 추가 end ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+            <h1>Best Movie</h1>
+            <div id="searchBar">
+                <input type="text" id="searchText" placeholder="Search for movies..." />
+                <input type="button" id="searchBtn" value="Search" />
                 <select id="sortBtn">
-                    <option value="title">제목순</option>
-                    <option value="score">평점순</option>
+                    <option value="sort">Sort</option>
+                    <option value="title">Title</option>
+                    <option value="score">Score</option>
                 </select>
-      </div>
-      <div id="movieCard" class="movieBox"></div>
-    </div>
-  </body>
+            </div>
+            <div id="movieCard" class="movieBox"></div>
+        </div>
+    </body>
 </html>
