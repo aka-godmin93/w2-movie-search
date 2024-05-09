@@ -105,13 +105,18 @@ h1 {
 }
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ  컨트롤 버튼  ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 .homeBtn {
-    padding: 5px 5px;
+    padding: 5px 7px;
     border: 1px solid #787878;
     border-radius: 20px;
     background-color: #eacc07e2;
     cursor: pointer;
-    font-size: large;
+    font: bolder;
+    font-size: 13px;
     color: #f7f7f7;
+}
+
+.homeBtn:hover {
+    background-color: #eacc07af;
 }
 
 .btn {
